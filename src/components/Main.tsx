@@ -1,0 +1,23 @@
+interface ChildProps {
+    componentList: string[];
+    setComponentName: (name: string) => void;
+}
+
+function Main({ setComponentName, componentList }: ChildProps) {
+    return (
+        <section>
+            <h1 className="text-5xl font-extrabold bg-gradient-to-r from-pink-500 to-emerald-500 via-purple-500 bg-clip-text text-transparent w-fit mx-auto my-4">
+                Make it move with Motion
+            </h1>
+            <div className="flex gap-4 mx-auto w-fit">
+                {componentList.map((component, i) => (
+                    <div className="flex gap-1" key={i}>
+                        <input key={`input-${i}`} type="radio" id={component} name="components" value={component} onChange={(e) => setComponentName(e.target.value)} />
+                        <label key={`label-${i}`} htmlFor={component}>{component}</label>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
+}
+export default Main;
