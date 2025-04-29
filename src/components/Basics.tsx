@@ -1,6 +1,8 @@
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
 
 function Basics() {
+  const [isVisible, setIsVisible] = useState(true)
   return (
     <section className="overflow-hidden p-8">
       <h1 className="text-5xl font-bold my-8 text-amber-500 underline">Basics</h1>
@@ -52,6 +54,27 @@ function Basics() {
         >
           <h1 style={{ transform: 'rotate(var(--rotate))' }}>Hello</h1>
         </motion.div>
+
+        <div className="h-[200px] flex items-center gap-4">
+            <AnimatePresence initial={false}>
+                {isVisible ? (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0 }}
+                        className="size-[100px] bg-cyan-500 text-white grid place-items-center"
+                        key="box"
+                    />
+                ) : null}
+            </AnimatePresence>
+            <motion.button
+                className="bg-cyan-600 text-white p-2 rounded-md h-10"
+                onClick={() => setIsVisible(!isVisible)}
+                whileTap={{ y: 1 }}
+            >
+                {isVisible ? "Hide" : "Show"}
+            </motion.button>
+        </div>
       </div>
     </section>
   );
