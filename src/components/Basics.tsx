@@ -44,6 +44,14 @@ function Basics() {
         >
           X
         </motion.div>
+
+        <motion.div className="size-[100px] bg-cyan-500 text-white grid place-items-center"
+          initial={{ '--rotate': '0deg' }}
+          animate={{ '--rotate': '360deg' }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <h1 style={{ transform: 'rotate(var(--rotate))' }}>Hello</h1>
+        </motion.div>
       </div>
     </section>
   );
