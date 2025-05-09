@@ -71,6 +71,7 @@ function Basics() {
                 className="bg-cyan-600 text-white p-2 rounded-md h-10"
                 onClick={() => setIsVisible(!isVisible)}
                 whileTap={{ y: 1 }}
+                layout
             >
                 {isVisible ? "Hide" : "Show"}
             </motion.button>
