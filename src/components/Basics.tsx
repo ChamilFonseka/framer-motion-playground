@@ -48,21 +48,6 @@ function Basics() {
         </motion.div>
 
         <motion.div className="size-[100px] bg-cyan-500 text-white grid place-items-center"
-          animate={{
-            x: [0, 100, 100, 0, 0],
-            y: [0, 0, 100, 100, 0]
-          }}
-          transition={{
-            duration: 4,
-            times: [0, 0.25, 0.5, 0.75, 1],
-            ease: "linear",
-            repeat: Infinity
-          }}
-        >
-          M
-        </motion.div>
-
-        <motion.div className="size-[100px] bg-cyan-500 text-white grid place-items-center"
           initial={{ '--rotate': '0deg' }}
           animate={{ '--rotate': '360deg' }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -92,6 +77,22 @@ function Basics() {
           </motion.button>
         </div>
       </div>
+
+      <motion.div className="size-[100px] bg-cyan-500 text-white grid place-items-center"
+        animate={{
+          x: [0, 100, 100, 0, 0],
+          y: [0, 0, 100, 100, 0]
+        }}
+        transition={{
+          duration: 4,
+          times: [0, 0.25, 0.5, 0.75, 1],
+          ease: "linear",
+          repeat: Infinity,
+          repeatType: "reverse"
+        }}
+      >
+        M
+      </motion.div>
     </section>
   );
 }
