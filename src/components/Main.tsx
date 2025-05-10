@@ -6,7 +6,9 @@ interface ChildProps {
 function Main({ setComponentName, componentList }: ChildProps) {
     return (
         <section>
-            <h1 className="text-5xl font-extrabold bg-gradient-to-r from-pink-500 to-emerald-500 via-purple-500 bg-clip-text text-transparent w-fit mx-auto my-4">
+            <h1 className="text-5xl font-extrabold bg-clip-text text-transparent w-fit mx-auto my-4"
+                style={{ backgroundImage: 'linear-gradient( var(--rg-gradient-angle, 96deg), #ff94f1 7.63%, #978aff 37.94%, #00d2e5 65.23%, #8ffff8 92.12%)' }}
+            >
                 Make it move with Motion
             </h1>
             <div className="flex gap-4 mx-auto w-fit">
