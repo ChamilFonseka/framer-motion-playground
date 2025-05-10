@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Main from "./components/Main";
 import Basics from "./components/Basics";
+import Gestures from "./components/Gestures";
 
 function App() {
   const [componentName, setComponentName] = useState('Basics');
   const [componentList] = useState([
     Basics.name,
+    Gestures.name,
   ]);
 
   return (
@@ -14,6 +16,9 @@ function App() {
       <hr />
       {componentName === 'Basics' && (
         <Basics />
+      )}
+      {componentName === 'Gestures' && (
+        <Gestures />
       )}
     </main>
   );
