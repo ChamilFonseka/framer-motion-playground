@@ -4,6 +4,7 @@ import Basics from "./components/Basics";
 import Gestures from "./components/Gestures";
 import UseAnimate from "./components/UseAnimate";
 import Variants from "./components/Variants";
+import InView from "./components/InView";
 
 function App() {
   const [componentName, setComponentName] = useState('Basics');
@@ -12,6 +13,7 @@ function App() {
     Gestures.name,
     UseAnimate.name,
     Variants.name,
+    InView.name,
   ]);
 
   return (
@@ -29,6 +31,9 @@ function App() {
       )}
       {componentName === 'Variants' && (
         <Variants />
+      )}
+      {componentName === 'InView' && (
+        <InView />
       )}
     </main>
   );
