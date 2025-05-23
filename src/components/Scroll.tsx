@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from "motion/react";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
 
 function Scroll() {
 
@@ -9,6 +9,9 @@ function Scroll() {
         damping: 30,
         restDelta: 0.001
     });
+
+    const background = useTransform(scrollYProgress, [0, 1], ["#332D56", "#FE5D26"]);
+    const width = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
     return (
         <div>
             <h1 className="text-5xl font-bold my-8 text-amber-500 underline">Scroll Animations</h1>
@@ -17,6 +20,10 @@ function Scroll() {
             <motion.div
                 className="fixed top-0 left-0 right-0 h-2 bg-amber-500 origin-left z-50"
                 style={{ scaleX }}
+            />
+            <motion.div
+                className="fixed top-4 left-0 right-0 h-2 bg-amber-500 origin-left z-50"
+                style={{ width, background }}
             />
 
             <div className="h-screen grid place-items-center">
