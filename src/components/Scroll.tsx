@@ -24,6 +24,14 @@ function Scroll() {
     });
     const opacityProgress = useTransform(fadeInProgress, [0, 1], [0, 1]);
     const scaleProgress = useTransform(fadeInProgress, [0, 1], [1, 2]);
+
+    // Rotation effect
+    const rotateRef = useRef(null);
+    const { scrollYProgress: rotateProgress } = useScroll({
+        target: rotateRef,
+        offset: ["end end", "center center"]
+    });
+    const rotate = useTransform(rotateProgress, [0, 1], [0, 360]);
     return (
         <div>
             <h1 className="text-5xl font-bold my-8 text-amber-500 underline">Scroll Animations</h1>
@@ -56,7 +64,12 @@ function Scroll() {
             </div>
 
             <div className="h-screen grid place-items-center">
-                
+                <motion.div ref={rotateRef}
+                    className="bg-rose-500 size-40 rounded-lg grid place-items-center"
+                    style={{ rotate }}
+                >
+                    <h2 className="text-xl font-bold text-white">Rotating</h2>
+                </motion.div>
             </div>
         </div>
     );
