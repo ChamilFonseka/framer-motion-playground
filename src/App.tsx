@@ -6,16 +6,17 @@ import UseAnimate from "./components/UseAnimate";
 import Variants from "./components/Variants";
 import InView from "./components/InView";
 import Scroll from "./components/Scroll";
+import HorzontalScroll from "./components/HorzontalScroll";
 
 function App() {
-  const [componentName, setComponentName] = useState('Basics');
-  const [componentList] = useState([
+  const [componentName, setComponentName] = useState('Basics'); const [componentList] = useState([
     Basics.name,
     Gestures.name,
     UseAnimate.name,
     Variants.name,
     InView.name,
     Scroll.name,
+    HorzontalScroll.name,
   ]);
 
   return (
@@ -36,9 +37,12 @@ function App() {
       )}
       {componentName === 'InView' && (
         <InView />
-      )}
+      )}      
       {componentName === 'Scroll' && (
         <Scroll />
+      )}
+      {componentName === 'HorzontalScroll' && (
+        <HorzontalScroll />
       )}
     </main>
   );
